@@ -12,7 +12,6 @@ import RealmSwift
 import RxRealm
 import RxSwift
 
-
 class RxRealmRealmTests: XCTestCase {
   let allTests = [
     "testRealmDidChangeNotifications": testRealmDidChangeNotifications,
@@ -21,7 +20,7 @@ class RxRealmRealmTests: XCTestCase {
   func testRealmDidChangeNotifications() {
     let realm = realmInMemory(#function)
 
-    let realmNotifications = RxSwift.Observable<(Realm, Realm.Notification)>.from(realm: realm)
+    let realmNotifications = Observable<(Realm, Realm.Notification)>.from(realm: realm)
 
     DispatchQueue.main.async {
       try! realm.write {
@@ -45,7 +44,7 @@ class RxRealmRealmTests: XCTestCase {
     let realm = realmInMemory(#function)
     realm.autorefresh = false
 
-    let realmNotifications = RxSwift.Observable<(Realm, Realm.Notification)>.from(realm: realm)
+    let realmNotifications = Observable<(Realm, Realm.Notification)>.from(realm: realm)
 
     DispatchQueue.main.async {
       try! realm.write {

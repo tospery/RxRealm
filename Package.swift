@@ -25,6 +25,7 @@ let package = Package(name: "RxRealm",
                         .target(name: "RxRealm",
                                 dependencies: [
                                   .product(name: "RxSwift", package: "RxSwift"),
+                                  .product(name: "Realm", package: "Realm"),
                                   .product(name: "RealmSwift", package: "Realm"),
                                   .product(name: "RxCocoa", package: "RxSwift")
                                 ],
@@ -34,6 +35,7 @@ let package = Package(name: "RxRealm",
                                       .byName(name: "RxRealm"),
                                       .product(name: "RxSwift", package: "RxSwift"),
                                       .product(name: "RxBlocking", package: "RxSwift"),
+                                      .product(name: "Realm", package: "Realm"),
                                       .product(name: "RealmSwift", package: "Realm"),
                                       .product(name: "RxCocoa", package: "RxSwift")
                                     ])
